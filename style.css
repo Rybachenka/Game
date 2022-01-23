@@ -1,0 +1,183 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-image: url(img/alex-monge-hw1.jpg);
+    background-repeat: no-repeat;
+    min-height: 100%;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+    counter-reset: spir;
+    cursor: url(img/33.png), not-allowed;
+}
+
+.cast input[type="checkbox"]:checked{
+    counter-increment: spir;
+}
+
+input[type="checkbox"]:checked + label{
+    display: none;
+}
+
+.summa::after{
+    content: counter(spir);
+}
+
+.summa, a{
+    font-size: 70px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+    display: inline-block;
+    text-align: center;
+}
+
+.cast{
+    width: 150px;
+    height: 150px;
+    /* outline: red solid 1px; */
+    position: relative;
+    overflow: hidden;
+    left: -160px;
+    top: 450px;
+}
+
+input{
+    position: absolute;
+    left: -50px;
+}  
+
+label{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/ghost_halloween_23227.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: url(img/33.png), not-allowed;
+}
+
+.cast1{
+    animation: fly1 5s .5s infinite;
+    /* animation-iteration-count: infinite; */
+}
+
+.cast2{
+    animation: fly1 5s 4s infinite;
+    /* animation-iteration-count: infinite; */
+}
+
+.cast3{
+    animation: fly1 9s 1s infinite;
+    /* animation-iteration-count: infinite; */
+}
+
+.cast4{
+    left: 60px;
+    top: 50px;
+    opacity: 0;
+    animation: fly2 10s 5s infinite ;
+    /* animation-iteration-count: infinite; */
+}
+
+.cast5{
+    left: 160px;
+    top: -500px;
+    animation: fly3 10s infinite ;
+    /* animation-iteration-count: infinite; */
+    opacity: 1;
+}
+
+.cast5:hover{
+    transform: scale(3);
+}
+
+@keyframes fly1{
+    0%{
+        left: 5%;
+        top: 400px;
+    }
+    25%{
+        left: 25%;
+        bottom: 100px;
+    }
+    50%{
+        left: 50%;
+        top: 120px;
+    }
+    75%{
+        left: 75%;
+        top: 200px;
+    }
+    100%{
+        left: 110%;
+        top: 2px;
+    }
+}
+
+@keyframes fly2{
+    0%{
+        opacity: 0.5;
+    }
+    25%{
+        left: 25%;
+        bottom: 300px;
+        opacity: 1;
+    }
+    50%{
+        left: 50%;
+        top: 120px;
+    }
+    75%{
+        left: 75%;
+        top: 10px;
+        opacity: 0;
+    }
+    100%{
+        left: 110%;
+        top: 2px;
+        opacity: 1;
+    }
+}
+
+@keyframes fly3{
+    0% { opacity: 1; }
+    10% { opacity: 0; }
+    15% { opacity: 1; }
+    25% { opacity: 0; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* button.summa1:hover{
+    animation-play-state: running;
+} */
+
+a{
+    text-decoration: none; 
+    background: transparent;
+    border: rgb(231, 222, 222) solid 1px;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.bottom{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+}
